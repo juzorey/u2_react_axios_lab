@@ -1,13 +1,13 @@
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+
+import { useNavigate } from 'react-router-dom'; // useNavigate to go to pages
+import { useState, useEffect } from 'react'; //  use state is to have information be changed trhought a new state and not change the intial state unless touched. the states can be passed to others through props where the props cab take the the state keys or variables
 import axios from 'axios';
 function StartshipsList (props){
   
-  const starshipLink = `starships`
-  const BASE_URL= `https://swapi.dev/api/`
+ 
   const[starships,setStarships]=useState([])
     
-    useEffect(()=>{
+    useEffect(()=>{ // the use of useEffect is for
 
       const getStartships = async()=>{
         const response = await axios.get(`https://swapi.dev/api/starships`)
@@ -30,14 +30,15 @@ function StartshipsList (props){
   
   }
 
+  // model, manufacturer, 
   return (
     <div>
       <h1> Starship List</h1>
       {
         props.starships.map((starship,key) => (
           <div key={key} onClick={()=>showStarship(key)} className="card">
-            <h5>{starship.name}</h5>
-            <h6>{key}</h6>
+            <h4>Name: {starship.name}</h4>
+       
           </div>
         )) 
       }

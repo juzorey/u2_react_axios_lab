@@ -27,12 +27,12 @@ useEffect(()=>{
 return starships ? (
   <div className="detail">
     <div className="detail-header">
-      <h2>Hello</h2>
      
     </div>
     <div className="info-wrapper">
-      <h3>Release Date:{starships.name} </h3>
-     
+      <h2>Name: {starships.name} </h2>
+      <h5>Model: {starships.model}</h5>
+      <h5>Manufacturer: {starships.manufacturer}</h5>
     </div>
   </div>
 ) : <h3>Find ship...</h3>
